@@ -4,6 +4,7 @@ const path = require('path');
 const sequelize = require('../config/database');
 const userRoutes = require('./routes/userRoutes');
 const calculateRoutes = require('./routes/calculateRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use('/api', userRoutes);
 app.use('/api', calculateRoutes);
+app.use('/api', productRoutes);
 
 const PORT = process.env.PORT || 3000;
 

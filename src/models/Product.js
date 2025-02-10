@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../../config/database');
+const Ingredients = require('./Ingredients'); // Importar o modelo Ingredients
 
 const Product = sequelize.define('Product', {
   id: {
@@ -43,5 +44,7 @@ const Product = sequelize.define('Product', {
   sequelize,
   modelName: 'Product',
 });
+
+Product.hasMany(Ingredients, { foreignKey: 'idItem', as: 'ingredients' });
 
 module.exports = Product;

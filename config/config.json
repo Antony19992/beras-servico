@@ -5,7 +5,7 @@
     "database": "beras-servico",
     "host": "127.0.0.1",
     "dialect": "sqlite",
-    "storage": "c:\\Users\\antony.felisardo\\Documents\\beras-servico\\database.sqlite"
+    "storage": "database/database.sqlite"
   },
   "test": {
     "username": "root",
@@ -13,7 +13,7 @@
     "database": "beras-servico_test",
     "host": "127.0.0.1",
     "dialect": "sqlite",
-    "storage": "c:\\Users\\antony.felisardo\\Documents\\beras-servico\\database_test.sqlite"
+    "storage": "database/database_test.sqlite"
   },
   "production": {
     "username": "root",
@@ -21,6 +21,6 @@
     "database": "beras-servico_prod",
     "host": "127.0.0.1",
     "dialect": "sqlite",
-    "storage": "c:\\Users\\antony.felisardo\\Documents\\beras-servico\\database_prod.sqlite"
+    "storage": "database/database_prod.sqlite"
   }
 }

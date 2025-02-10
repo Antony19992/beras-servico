@@ -4,7 +4,6 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const { SECRET_KEY } = require('./auth');
 
-// Criar usuário
 router.post('/users', async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -16,7 +15,6 @@ router.post('/users', async (req, res) => {
   }
 });
 
-// Listar todos os usuários
 router.get('/users', async (req, res) => {
   try {
     const users = await User.findAll();
@@ -28,7 +26,6 @@ router.get('/users', async (req, res) => {
   }
 });
 
-// Buscar usuário por ID
 router.get('/users/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
@@ -43,7 +40,6 @@ router.get('/users/:id', async (req, res) => {
   }
 });
 
-// Atualizar usuário
 router.put('/users/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
@@ -59,7 +55,6 @@ router.put('/users/:id', async (req, res) => {
   }
 });
 
-// Deletar usuário
 router.delete('/users/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
@@ -85,10 +80,8 @@ router.post('/login', async (req, res) => {
           return res.status(400).json({ error: 'Credenciais inválidas' });
       }
       
-      // Converte para um objeto simples se necessário
       const plainUser = JSON.parse(JSON.stringify(user));
-      
-      // Remove a senha antes de retornar
+    
       delete plainUser.senha; 
       
       const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: '1h' });

@@ -98,3 +98,8 @@ beras-servico/
 
 ## Contribuição
 Sinta-se à vontade para contribuir com melhorias e correções!
+
+## Comando para rodar migrations
+```bash
+npx sequelize-cli db:migrate
+```

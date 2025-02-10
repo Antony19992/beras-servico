@@ -19,6 +19,10 @@ const Ingredients = sequelize.define('Ingredients', {
     type: DataTypes.BOOLEAN,
     defaultValue: true,
   },
+  removable: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true,
+  },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,

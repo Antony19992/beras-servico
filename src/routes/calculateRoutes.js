@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios');
-const app = express();
-const PORT = process.env.PORT || 3000;
+const { authenticateToken } = require('./auth');
 
-app.get('/calculate-distance', async (req, res) => {
+const router = express.Router();
+
+// Rota para calcular a distância
+router.get('/calculate-distance', authenticateToken, async (req, res) => {
     const { addressA, addressB } = req.query;
 
     if (!addressA || !addressB) {
@@ -32,6 +34,7 @@ app.get('/calculate-distance', async (req, res) => {
     }
 });
 
+// Função para calcular a distância
 function calculateDistance(latA, lonA, latB, lonB) {
     const R = 6371; // Raio da Terra em km
     const dLat = (latB - latA) * (Math.PI / 180);
@@ -44,6 +47,4 @@ function calculateDistance(latA, lonA, latB, lonB) {
     return R * c; // Distância em km
 }
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+module.exports = router;

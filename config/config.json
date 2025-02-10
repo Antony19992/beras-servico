@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "beras-servico",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "c:\\Users\\antony.felisardo\\Documents\\beras-servico\\database.sqlite"
+  },
+  "test": {
+    "username": "root",
+    "password": "",
+    "database": "beras-servico_test",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "c:\\Users\\antony.felisardo\\Documents\\beras-servico\\database_test.sqlite"
+  },
+  "production": {
+    "username": "root",
+    "password": "",
+    "database": "beras-servico_prod",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "c:\\Users\\antony.felisardo\\Documents\\beras-servico\\database_prod.sqlite"
+  }
+}

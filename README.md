@@ -99,7 +99,7 @@ beras-servico/
 ### Rotas de Pedidos
 
 #### Criar Pedido
-- **Endpoint**: `POST /api/pedidos`
+- **Endpoint**: `POST /api/pedido`
 - **Descrição**: Cria um novo pedido, gerando automaticamente um número de pedido e calculando o total com base nos itens fornecidos.
 - **Body**:
   ```json
@@ -109,6 +109,7 @@ beras-servico/
     "itens": [1, 2, 3]
   }
   ```
+- **Observação**: O total é calculado com base no campo `valor` dos produtos fornecidos na lista de itens.
 
 #### Listar Todos os Pedidos
 - **Endpoint**: `GET /api/pedidos`
@@ -136,5 +137,3 @@ Sinta-se à vontade para contribuir com melhorias e correções!
 ## Comando para rodar migrations
 ```bash
 npx sequelize-cli db:migrate
-
-```

@@ -96,10 +96,45 @@ beras-servico/
      - **404 Not Found**: Retorna um erro se o usuário não for encontrado.
      - **500 Internal Server Error**: Retorna um erro se ocorrer um problema ao deletar o usuário.
 
+### Rotas de Pedidos
+
+#### Criar Pedido
+- **Endpoint**: `POST /api/pedidos`
+- **Descrição**: Cria um novo pedido, gerando automaticamente um número de pedido e calculando o total com base nos itens fornecidos.
+- **Body**:
+  ```json
+  {
+    "clienteId": 1,
+    "statusId": 1,
+    "itens": [1, 2, 3]
+  }
+  ```
+
+#### Listar Todos os Pedidos
+- **Endpoint**: `GET /api/pedidos`
+- **Descrição**: Lista todos os pedidos.
+
+#### Buscar Pedido por ID
+- **Endpoint**: `GET /api/pedidos/:id`
+- **Descrição**: Busca um pedido específico pelo ID.
+
+#### Atualizar Pedido
+- **Endpoint**: `PUT /api/pedidos/:id`
+- **Descrição**: Atualiza um pedido existente.
+
+#### Deletar Pedido
+- **Endpoint**: `DELETE /api/pedidos/:id`
+- **Descrição**: Deleta um pedido existente.
+
+#### Listar Pedidos por Cliente
+- **Endpoint**: `GET /api/pedidos/cliente/:clienteId`
+- **Descrição**: Lista todos os pedidos de um cliente específico.
+
 ## Contribuição
 Sinta-se à vontade para contribuir com melhorias e correções!
 
 ## Comando para rodar migrations
 ```bash
 npx sequelize-cli db:migrate
+
 ```
